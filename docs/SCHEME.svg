@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 620" width="820" height="620" font-family="Arial, Helvetica, sans-serif">
+  <rect width="820" height="620" fill="#ffffff"/>
+  <text x="20" y="30" font-size="20" font-weight="bold" fill="#222">Климат-станция: схема подключения</text>
+
+  <!-- ESP32-C3 Super Mini -->
+  <rect x="40" y="60" width="160" height="480" rx="8" fill="#eef3f8" stroke="#333" stroke-width="2"/>
+  <text x="110" y="76" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">ESP32-C3</text>
+  <text x="110" y="92" font-size="13" text-anchor="middle" fill="#222">Super Mini</text>
+  <g font-size="12" fill="#222" text-anchor="end">
+    <text x="190" y="104">3V3</text>
+    <text x="190" y="134">GND</text>
+    <text x="190" y="164">GPIO4 · SDA</text>
+    <text x="190" y="194">GPIO5 · SCL</text>
+    <text x="190" y="424">GPIO6 · кнопка</text>
+    <text x="190" y="504">GPIO7 · зуммер</text>
+  </g>
+
+  <!-- BME280 -->
+  <text x="590" y="62" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">BME280 (I²C, 3.3 В)</text>
+  <rect x="520" y="70" width="140" height="140" rx="6" fill="#fff8e1" stroke="#333" stroke-width="2"/>
+  <g font-size="12" fill="#222">
+    <text x="530" y="104">VCC</text>
+    <text x="530" y="134">GND</text>
+    <text x="530" y="164">SDA</text>
+    <text x="530" y="194">SCL</text>
+  </g>
+
+  <!-- OLED -->
+  <text x="590" y="242" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">OLED SSD1306 128×64 (I²C)</text>
+  <rect x="520" y="250" width="140" height="140" rx="6" fill="#e8f5e9" stroke="#333" stroke-width="2"/>
+  <g font-size="12" fill="#222">
+    <text x="530" y="284">VCC</text>
+    <text x="530" y="314">GND</text>
+    <text x="530" y="344">SDA</text>
+    <text x="530" y="374">SCL</text>
+  </g>
+
+  <!-- Провода I2C и питания -->
+  <g fill="none" stroke-width="2.5" stroke-linejoin="round">
+    <!-- 3V3 -->
+    <path d="M200,100 H520" stroke="#d32f2f"/>
+    <path d="M420,100 V280 H520" stroke="#d32f2f"/>
+    <!-- GND -->
+    <path d="M200,130 H520" stroke="#222"/>
+    <path d="M380,130 V310 H520" stroke="#222"/>
+    <!-- SDA -->
+    <path d="M200,160 H520" stroke="#2e7d32"/>
+    <path d="M340,160 V340 H520" stroke="#2e7d32"/>
+    <!-- SCL -->
+    <path d="M200,190 H520" stroke="#1565c0"/>
+    <path d="M300,190 V370 H520" stroke="#1565c0"/>
+  </g>
+  <g>
+    <circle cx="420" cy="100" r="4" fill="#d32f2f"/>
+    <circle cx="380" cy="130" r="4" fill="#222"/>
+    <circle cx="340" cy="160" r="4" fill="#2e7d32"/>
+    <circle cx="300" cy="190" r="4" fill="#1565c0"/>
+  </g>
+
+  <!-- Кнопка с фиксацией -->
+  <text x="420" y="394" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">Кнопка с фиксацией</text>
+  <rect x="380" y="405" width="80" height="30" rx="4" fill="#fff3e0" stroke="#333" stroke-width="2"/>
+  <text x="420" y="425" font-size="12" text-anchor="middle" fill="#222">SW</text>
+  <g fill="none" stroke-width="2.5">
+    <path d="M200,420 H380" stroke="#ef6c00"/>
+    <path d="M460,420 H480 V450" stroke="#222"/>
+  </g>
+  <g stroke="#222" stroke-width="2.5">
+    <path d="M468,450 H492"/>
+    <path d="M472,456 H488"/>
+    <path d="M476,462 H484"/>
+  </g>
+
+  <!-- Зуммер через транзистор -->
+  <text x="330" y="530" font-size="12" text-anchor="middle" fill="#555">R1 = 1 кОм</text>
+  <g fill="none" stroke-width="2.5">
+    <path d="M200,500 H300" stroke="#7b1fa2"/>
+    <path d="M360,500 H500" stroke="#7b1fa2"/>
+    <path d="M550,470 V440 H640" stroke="#7b1fa2"/>
+    <path d="M550,530 V550" stroke="#222"/>
+    <path d="M740,440 H780 V405" stroke="#d32f2f"/>
+  </g>
+  <rect x="300" y="490" width="60" height="20" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="330" y="504" font-size="12" text-anchor="middle" fill="#222">R1</text>
+
+  <rect x="500" y="470" width="100" height="60" rx="4" fill="#f3e5f5" stroke="#333" stroke-width="2"/>
+  <text x="550" y="496" font-size="12" text-anchor="middle" fill="#222">NPN</text>
+  <text x="550" y="512" font-size="12" text-anchor="middle" fill="#222">BC547</text>
+  <g font-size="11" fill="#555">
+    <text x="506" y="496">B</text>
+    <text x="558" y="464">C</text>
+    <text x="558" y="544">E</text>
+  </g>
+  <g stroke="#222" stroke-width="2.5">
+    <path d="M538,550 H562"/>
+    <path d="M542,556 H558"/>
+    <path d="M546,562 H554"/>
+  </g>
+
+  <rect x="640" y="420" width="100" height="40" rx="4" fill="#fce4ec" stroke="#333" stroke-width="2"/>
+  <text x="690" y="437" font-size="12" text-anchor="middle" fill="#222">Зуммер</text>
+  <text x="690" y="452" font-size="11" text-anchor="middle" fill="#555">активный</text>
+  <text x="648" y="444" font-size="13" fill="#222">−</text>
+  <text x="726" y="444" font-size="13" fill="#222">+</text>
+  <text x="780" y="398" font-size="12" font-weight="bold" text-anchor="middle" fill="#d32f2f">3V3</text>
+
+  <!-- Примечания -->
+  <text x="20" y="588" font-size="12" fill="#444">Подтяжки линий SDA/SCL уже есть на модулях BME280 и OLED. Кнопка: нажата (зафиксирована) = звук разрешён.</text>
+  <text x="20" y="606" font-size="12" fill="#444">Кнопка подключена к GPIO6 и GND, зуммер включается через транзистор, чтобы не нагружать пин платы.</text>
+</svg>
